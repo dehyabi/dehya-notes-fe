@@ -1,26 +1,72 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type Note = {
+ id: number;
+ title: string;
+ content: string;
 }
+
+const App = () => {
+ const [ notes, setNotes ] = useState<
+  Note[]	
+ >([
+  {
+   id: 1,
+   title: "note title 1",
+   content: "content 1",
+  },
+  {
+   id: 2,
+   title: "note title 2",
+   content: "content 2",
+  },
+  {
+   id: 3,
+   title: "note title 3",
+   content: "content 3",
+  },
+  {
+   id: 4,
+   title: "note title 4",
+   content: "content 4",
+  },
+  {
+   id: 5,
+   title: "note title 5",
+   content: "content 5",
+  }
+ ]);
+ return (
+  <div className="app-container">
+   <form className="note-form">
+    <input
+     placeholder="Title"
+     required
+    ></input>
+    <textarea
+     placeholder="Content"
+     rows={10}
+     required
+    ></textarea>
+    <button type="submit">
+     Add Note
+    </button>
+   </form>
+   <div className="notes-grid">
+   {notes.map((note)=> (
+    <div className="notes-item">
+     <div className="notes-header">
+      <button>x</button>
+     </div>
+     <h2>{note.title}</h2>
+     <p>{note.content}</p>
+    </div>
+   ))}
+   </div> 
+  </div>
+
+ );
+};
 
 export default App;
