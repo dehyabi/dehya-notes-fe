@@ -41,19 +41,29 @@ const App = () => {
  const [title, setTitle] = useState("");
  const [content, setContent] = useState("");
 
- const handleSubmit = (
+ const handleAddNote = (
   event: React.FormEvent
  ) => {
   event.preventDefault();
   console.log("title: ", title);
   console.log("content: ", content);
+
+  const newNote: Note = {
+   id: notes.length + 1,
+   title: title,
+   content: content
+  }
+
+  setNotes([newNote, ...notes]);
+  setTitle("");
+  setContent("");
  };
 
  return (
   <div className="app-container">
    <form
    className="note-form"
-   onSubmit={(event) => handleSubmit(event)}
+   onSubmit={(event) => handleAddNote(event)}
    >
     <input
      value={title}
