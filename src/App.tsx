@@ -35,16 +35,39 @@ const App = () => {
    id: 5,
    title: "note title 5",
    content: "content 5",
-  }
+  },
  ]);
+
+ const [title, setTitle] = useState("");
+ const [content, setContent] = useState("");
+
+ const handleSubmit = (
+  event: React.FormEvent
+ ) => {
+  event.preventDefault();
+  console.log("title: ", title);
+  console.log("content: ", content);
+ };
+
  return (
   <div className="app-container">
-   <form className="note-form">
+   <form
+   className="note-form"
+   onSubmit={(event) => handleSubmit(event)}
+   >
     <input
+     value={title}
+     onChange={(event)=>
+      setTitle(event.target.value)
+     }
      placeholder="Title"
      required
     ></input>
     <textarea
+     value={content}
+     onChange={(event)=>
+      setContent(event.target.value)
+     }
      placeholder="Content"
      rows={10}
      required
