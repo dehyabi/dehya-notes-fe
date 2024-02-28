@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import dehya_logo from './assets/dehya_logo.png'
+import ig_logo from './assets/ig_logo.png'
+import gh_logo from './assets/gh_logo.png'
 
 type Note = {
  id: number;
@@ -114,7 +117,11 @@ const App = () => {
   setNotes(updatedNotes);
  };
 
+ const d = new Date();
+ const currentYear = d.getFullYear();
+
  return (
+  <>
   <div className="app-container">
    <form
    className="note-form"
@@ -173,8 +180,28 @@ const App = () => {
      <p>{note.content}</p>
     </div>
    ))}
-   </div> 
+   </div>
+   <footer>
+   <tr>
+    <td className="copyright">
+      &#169; {currentYear} Dehya Notes 
+    </td>
+    <td>
+    <a href="https://dehyabi.netlify.app" target="_blank"> <img src={dehya_logo} className="footer-img dehya-logo" alt='dehya logo'/> </a>
+    </td>
+    <td>
+    <a href="https://instagram.com/dehyabi" target="_blank"> <img src={ig_logo} className="footer-img ig-logo" alt='instagram logo'/> </a>
+    </td>
+    <td>
+    <a href="https://github.com/dehyabi" target="_blank"> <img src={gh_logo} className="footer-img gh-logo" alt='github logo'/> </a>
+    </td>
+
+   </tr>
+
+   </footer>
+
   </div>
+  </>
 
  );
 };
