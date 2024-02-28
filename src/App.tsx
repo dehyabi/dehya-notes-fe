@@ -187,13 +187,13 @@ const App = () => {
       &#169; {currentYear} Dehya Notes 
     </td>
     <td>
-    <a href="https://dehyabi.netlify.app" target="_blank"> <img src={dehya_logo} className="footer-img dehya-logo" alt='dehya logo'/> </a>
+    <a href="https://dehyabi.netlify.app" target="_blank" rel="noreferrer"> <img src={dehya_logo} className="footer-img dehya-logo" alt='dehya logo'/> </a>
     </td>
     <td>
-    <a href="https://instagram.com/dehyabi" target="_blank"> <img src={ig_logo} className="footer-img ig-logo" alt='instagram logo'/> </a>
+    <a href="https://instagram.com/dehyabi" target="_blank" rel="noreferrer"> <img src={ig_logo} className="footer-img ig-logo" alt='instagram logo'/> </a>
     </td>
     <td>
-    <a href="https://github.com/dehyabi" target="_blank"> <img src={gh_logo} className="footer-img gh-logo" alt='github logo'/> </a>
+    <a href="https://github.com/dehyabi" target="_blank" rel="noreferrer"> <img src={gh_logo} className="footer-img gh-logo" alt='github logo'/> </a>
     </td>
 
    </tr>
